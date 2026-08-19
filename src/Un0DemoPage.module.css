@@ -1,0 +1,277 @@
+.page,
+.page * {
+	box-sizing: border-box;
+}
+
+.page {
+	width: min(100%, 720px);
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: 64px 24px;
+	color: #222521;
+	font-family:
+		Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		sans-serif;
+}
+
+.demo {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 22px;
+}
+
+.title {
+	margin: 0;
+	font-size: 1.4rem;
+	font-weight: 650;
+}
+
+.controls {
+	display: grid;
+	grid-template-columns:
+		max-content minmax(105px, 1fr) max-content 125px max-content
+		max-content;
+	gap: 10px 5px;
+	align-items: center;
+	justify-self: center;
+	width: min(840px, calc(100vw - 20px));
+	overflow-x: auto;
+	padding: 2px;
+}
+
+.classLabel {
+	font-size: 0.88rem;
+	font-weight: 650;
+	white-space: nowrap;
+}
+
+.classSelect {
+	padding: 7px 10px;
+	border: 1px solid #c9ccc6;
+	border-radius: 4px;
+	background: #fffefb;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.88rem;
+}
+
+.classSelect:disabled {
+	color: #888c87;
+	cursor: default;
+}
+
+.primarySelect,
+.classPicker {
+	width: 100%;
+	min-width: 0;
+}
+
+.classSelect:focus-visible,
+.generateButton:focus-visible {
+	outline: 2px solid #287478;
+	outline-offset: 2px;
+}
+
+.generateButton {
+	min-width: 106px;
+	padding: 7px 12px;
+	border: 1px solid #287478;
+	border-radius: 4px;
+	background: #287478;
+	color: #fffefb;
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.88rem;
+	font-weight: 650;
+	white-space: nowrap;
+}
+
+.generateButton:hover:not(:disabled) {
+	border-color: #174f52;
+	background: #174f52;
+}
+
+.generateButton:disabled {
+	border-color: #b6b9b5;
+	background: #b6b9b5;
+	cursor: default;
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 12px;
+}
+
+.toggleLabel {
+	display: inline-flex;
+	gap: 6px;
+	align-items: center;
+	font-size: 0.88rem;
+	font-weight: 650;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.toggleLabel input {
+	accent-color: #287478;
+	cursor: pointer;
+}
+
+.compareNote {
+	margin: 0;
+	color: #8a6d3b;
+	font-size: 0.78rem;
+}
+
+.compareGrid {
+	display: grid;
+	gap: 14px;
+}
+
+.compareRow {
+	display: grid;
+	grid-template-columns: minmax(88px, 120px) repeat(4, 1fr);
+	gap: 12px;
+	align-items: center;
+}
+
+.rowLabel {
+	color: #4a4f49;
+	font-size: 0.75rem;
+	line-height: 1.5;
+}
+
+.rowLabel strong {
+	display: block;
+	font-size: 0.88rem;
+}
+
+.rowTime {
+	display: block;
+	color: #888c87;
+	font-variant-numeric: tabular-nums;
+}
+
+.rowUnavailable {
+	grid-column: 2 / -1;
+	margin: 0;
+	color: #8a6d3b;
+	font-size: 0.78rem;
+}
+
+.sample {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1;
+	border: 1px solid #dedbd1;
+	background: #f4f2ec;
+	image-rendering: pixelated;
+}
+
+.progressRow {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.progressTrack {
+	flex: 1;
+	overflow: hidden;
+	height: 6px;
+	border-radius: 3px;
+	background: #dedbd1;
+}
+
+.progressPct {
+	min-width: 2.6em;
+	color: #646963;
+	font-size: 0.78rem;
+	font-variant-numeric: tabular-nums;
+	text-align: right;
+}
+
+.cancelButton {
+	padding: 2px 8px;
+	border: 1px solid #c9ccc6;
+	border-radius: 4px;
+	background: transparent;
+	color: #646963;
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.78rem;
+}
+
+.cancelButton:hover {
+	border-color: #646963;
+	color: #222521;
+}
+
+.cancelButton:focus-visible {
+	outline: 2px solid #287478;
+	outline-offset: 2px;
+}
+
+.progressFill {
+	height: 100%;
+	border-radius: 3px;
+	background: #287478;
+	transition: width 0.15s ease-out;
+}
+
+.status {
+	margin: 0;
+	color: #646963;
+	font-size: 0.78rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.readMore {
+	color: #646963;
+	font-size: 0.78rem;
+}
+
+.readMore summary {
+	display: inline-flex;
+	gap: 4px;
+	align-items: center;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	list-style: none;
+}
+
+.readMore summary::-webkit-details-marker {
+	display: none;
+}
+
+.readMore ul {
+	display: grid;
+	gap: 5px;
+	margin: 9px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.readMore li {
+	overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+	.page {
+		padding: 38px 10px;
+	}
+
+	.gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.compareRow {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.rowLabel {
+		grid-column: 1 / -1;
+	}
+}
